@@ -1,5 +1,5 @@
 {
-  "name": "abc",
+  "name": "vue2",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -16,12 +16,13 @@
   "dependencies": {
     "core-js": "3.13.1",
     "electron": "12.0.9",
+    "electron-devtools-installer": "3.2.0",
     "is-electron": "2.2.0",
     "vue": "2.6.12",
     "vue-cli-plugin-electron-builder": "2.0.0",
     "vue-router": "3.5.1",
-    "vuex": "3.6.2",
-    "electron-devtools-installer": "3.2.0"
+    "vuetify": "2.5.1",
+    "vuex": "3.6.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "4.5.13",
