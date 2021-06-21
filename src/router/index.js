@@ -8,7 +8,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-	  component: Home,
+    component: Home,
   },
   {
     path: '/about',
@@ -26,7 +26,7 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: () => import('../views/Account.vue'),
+    component: () => import('../views/Login.vue'),
   },
 ];
 
