@@ -1,9 +1,9 @@
 <template>
-  <div id="app">
+  <v-app id="app">
     <header-navigation/>
     <router-view/>
     <footer-navigation/>
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -31,5 +31,11 @@ html, body {
   color: #2c3e50;
   position: relative;
   min-height: 100%;
+}
+
+/* Global css, need to be transferred to another place */
+.align-page-center {
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

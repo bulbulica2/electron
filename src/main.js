@@ -12,7 +12,9 @@ Vue.use(Vuetify);
 
 Vue.config.productionTip = false;
 
-const vuetifyOptions = {};
+const vuetifyOptions = {
+	theme: {dark: true},
+};
 
 // check for desktop or web app
 if (isElectron()) {

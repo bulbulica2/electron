@@ -1,11 +1,9 @@
 <template>
   <v-footer
       class="footer-navigator"
-      light
       padless
   >
     <v-card
-        light
         width="100%"
     >
       <v-container>

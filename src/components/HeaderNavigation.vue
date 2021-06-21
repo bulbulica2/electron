@@ -1,26 +1,29 @@
 <template>
   <div id="nav">
     <v-card>
+      <v-tabs>
+        <p style="text-align: left">logo</p>
+        <router-link to="/account">Account</router-link>
+      </v-tabs>
       <v-tabs
           background-color="deep-purple accent-4"
           center-active
           centered
-          light
       >
-        <v-tab class="logo" @v-on:click="location.href='/'">
+        <v-tab @v-on:click="this.$router.go('/')">
           <router-link to="/">
-            Logo Student Coin
+            Company
           </router-link>
         </v-tab>
-        <v-tab>Buy STC Token</v-tab>
         <v-tab @v-on:click="location.href='/about'">
           <router-link to="/about">
-            Roadmap
+            Project
           </router-link>
         </v-tab>
-        <v-tab>Team</v-tab>
+        <v-tab>Roadmap</v-tab>
+        <v-tab>Portofolio</v-tab>
         <v-tab>Community</v-tab>
-        <v-tab>Buy STC</v-tab>
+        <v-tab>FAQ</v-tab>
       </v-tabs>
     </v-card>
   </div>
