@@ -2,17 +2,21 @@
   <div id="nav">
     <v-card>
       <v-tabs
-        background-color="deep-purple accent-4"
-        center-active
-        centered
-        light
+          background-color="deep-purple accent-4"
+          center-active
+          centered
+          light
       >
-        <v-tab class="logo">
-          <router-link to="/">Logo Student Coin</router-link>
+        <v-tab class="logo" @v-on:click="location.href='/'">
+          <router-link to="/">
+            Logo Student Coin
+          </router-link>
         </v-tab>
         <v-tab>Buy STC Token</v-tab>
-        <v-tab>
-          <router-link to="/about">Roadmap</router-link>
+        <v-tab @v-on:click="location.href='/about'">
+          <router-link to="/about">
+            Roadmap
+          </router-link>
         </v-tab>
         <v-tab>Team</v-tab>
         <v-tab>Community</v-tab>

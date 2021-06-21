@@ -16,11 +16,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 html, body {
-  margin:0;
+  margin: 0;
   padding: 0;
-  height:100%;
+  height: 100%;
 }
 
 #app {
