@@ -27,7 +27,7 @@ import VCustomCard from '../components/VCustomCard.vue';
 
 export default {
   name: 'Account',
-  components: {VCustomCard},
+  components: { VCustomCard },
 };
 </script>
 
