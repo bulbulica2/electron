@@ -2,17 +2,19 @@
   <v-app id="app">
     <header-navigation/>
     <router-view/>
+    <v-snackbar-component/>
     <footer-navigation/>
   </v-app>
 </template>
 
 <script>
-import HeaderNavigation from './components/HeaderNavigation.vue';
-import FooterNavigation from './components/FooterNavigation.vue';
+import HeaderNavigation from './components/navigation/HeaderNavigation.vue';
+import FooterNavigation from './components/navigation/FooterNavigation.vue';
+import VSnackbarComponent from "./components/VSnackbarComponent";
 
 export default {
   name: 'App',
-  components: { FooterNavigation, HeaderNavigation },
+  components: {VSnackbarComponent, FooterNavigation, HeaderNavigation },
 };
 </script>
 

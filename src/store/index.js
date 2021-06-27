@@ -4,8 +4,17 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: {
+	  snackbarTextMessage: null,
+  },
+  mutations: {
+  	setSnackbarTextMessage(state, message) {
+  		state.snackbarTextMessage = message;
+	  }
+  },
+	getters: {
+  	getSnackbarTextMessage: state => state.snackbarTextMessage,
+	},
   actions: {},
   modules: {},
 });

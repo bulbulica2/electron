@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-custom-card
+    <v-custom-card-component
         :image-src="'https://cdn.vuetifyjs.com/images/cards/cooking.png'"
         :title="'Account panel'"
     >
@@ -18,16 +18,16 @@
         </v-btn>
         <br/><br/>
       </template>
-    </v-custom-card>
+    </v-custom-card-component>
   </div>
 </template>
 
 <script>
-import VCustomCard from '../components/VCustomCard.vue';
+import VCustomCardComponent from '../components/VCustomCardComponent.vue';
 
 export default {
   name: 'Account',
-  components: { VCustomCard },
+  components: { VCustomCardComponent },
 };
 </script>
 

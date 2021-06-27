@@ -89,7 +89,7 @@
 
 <script>
 export default {
-  name: 'VCustomCard',
+  name: 'VCustomCardComponent',
   props: {
     title: {
       type: String,
