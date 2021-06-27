@@ -10,11 +10,11 @@
 <script>
 import HeaderNavigation from './components/navigation/HeaderNavigation.vue';
 import FooterNavigation from './components/navigation/FooterNavigation.vue';
-import VSnackbarComponent from "./components/VSnackbarComponent";
+import VSnackbarComponent from './components/VSnackbarComponent.vue';
 
 export default {
   name: 'App',
-  components: {VSnackbarComponent, FooterNavigation, HeaderNavigation },
+  components: { VSnackbarComponent, FooterNavigation, HeaderNavigation },
 };
 </script>
 

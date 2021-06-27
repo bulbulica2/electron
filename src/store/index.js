@@ -5,16 +5,16 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-	  snackbarTextMessage: null,
+    snackbarTextMessage: null,
   },
   mutations: {
-  	setSnackbarTextMessage(state, message) {
-  		state.snackbarTextMessage = message;
-	  }
+    setSnackbarTextMessage(state, message) {
+      state.snackbarTextMessage = message;
+    },
   },
-	getters: {
-  	getSnackbarTextMessage: state => state.snackbarTextMessage,
-	},
+  getters: {
+    getSnackbarTextMessage: (state) => state.snackbarTextMessage,
+  },
   actions: {},
   modules: {},
 });

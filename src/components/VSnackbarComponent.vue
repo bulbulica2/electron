@@ -20,19 +20,24 @@
 
 <script>
 export default {
-  name: "VSnackbarComponent",
+  name: 'VSnackbarComponent',
   data: () => ({
     displaySnackbar: false,
   }),
   computed: {
     snackbarMessage() {
-      if (this.$store.getters.getSnackbarTextMessage) {
-        this.displaySnackbar = true;
-      }
+      this.displaySnackbarOnPage(this.$store.getters.getSnackbarTextMessage);
       return this.$store.getters.getSnackbarTextMessage;
     },
   },
-}
+  methods: {
+    displaySnackbarOnPage(vuexSnackbarTextMessage) {
+      if (vuexSnackbarTextMessage) {
+        this.displaySnackbar = true;
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>

@@ -50,8 +50,8 @@ export default {
 
   validations: {
     form: {
-      email: {required, email},
-      password: {required, minLength: minLength(6)},
+      email: { required, email },
+      password: { required, minLength: minLength(6) },
     },
   },
 
@@ -108,7 +108,7 @@ export default {
       }
     },
     displaySuccessfullyLoggedInMessage(emailAddress) {
-      const message = 'You have successfully logged in using ' + emailAddress + '.';
+      const message = `You have successfully logged in using ${emailAddress}.`;
       this.$store.commit('setSnackbarTextMessage', message);
     },
     displayInvalidLoggedInMessage() {
