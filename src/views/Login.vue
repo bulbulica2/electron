@@ -27,7 +27,7 @@
 
           <v-btn
               class="mr-4"
-              @click="submit"
+              @click="submitLoginForm"
           >
             submit
           </v-btn>
@@ -69,10 +69,10 @@ export default {
         return errors;
       }
       if (!this.$v.form.email.email) {
-        errors.push('It must be valid e-mail');
+        errors.push('It must be valid e-mail.');
       }
       if (!this.$v.form.email.required) {
-        errors.push('The email is required');
+        errors.push('The email is required.');
       }
       return errors;
     },
@@ -92,19 +92,19 @@ export default {
   },
 
   methods: {
-    submit() {
+    submitLoginForm() {
       this.$v.$touch();
       if (!this.$v.$invalid) {
-        this.login();
+        this.loginForm();
       }
     },
-    login() {
+    loginForm() {
       // aici trebuie adaugat axios
       if (!this.$v.$invalid) {
         this.displaySuccessfullyLoggedInMessage(this.form.email);
-        this.clearForm();
+        this.clearLoginForm();
       } else {
-        this.displayInvalidLoggedInMessage(this.form.email);
+        this.displayInvalidLoggedInMessage();
       }
     },
     displaySuccessfullyLoggedInMessage(emailAddress) {
@@ -115,7 +115,7 @@ export default {
       const message = 'The email address or password is incorrect. Please try again.';
       this.$store.commit('setSnackbarTextMessage', message);
     },
-    clearForm() {
+    clearLoginForm() {
       this.$v.$reset();
       this.form.email = null;
       this.form.password = null;

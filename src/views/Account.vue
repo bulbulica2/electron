@@ -8,7 +8,8 @@
         <v-btn
             elevation="4"
             rounded
-        >Join Us
+        >
+          <router-link to="/register">Join Us</router-link>
         </v-btn>
         <v-btn
             elevation="4"
