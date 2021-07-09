@@ -2,7 +2,7 @@
   <div>
     <v-custom-card-component
         :image-src="'https://cdn.vuetifyjs.com/images/cards/cooking.png'"
-        :title="'Login panel'"
+        :title="'Register page'"
     >
       <template v-slot:content>
         <form>
@@ -52,12 +52,20 @@
               @input="$v.form.promotionalCode.$touch()"
               @blur="$v.form.promotionalCode.$touch()"
           ></v-text-field>
+          <v-checkbox
+              v-model="form.checkboxAcceptTerms"
+              :error-messages="checkboxAcceptTermsErrors"
+              label="I accept the Terms of user of Xentrom"
+              required
+              @change="$v.form.checkboxAcceptTerms.$touch()"
+              @blur="$v.form.checkboxAcceptTerms.$touch()"
+          ></v-checkbox>
 
           <v-btn
               class="mr-4"
               @click="submitRegisterForm"
           >
-            submit
+            Create Account
           </v-btn>
         </form>
         <br/><br/>
@@ -88,6 +96,9 @@ export default {
         sameAsPassword: sameAs('password'),
       },
       promotionalCode: { alphaNum, minLength: minLength(10), maxLength: maxLength(10) },
+      checkboxAcceptTerms: {
+        checked: ((val) => val),
+      },
     },
   },
   data: () => ({
@@ -97,6 +108,7 @@ export default {
       password: '',
       repeatPassword: '',
       promotionalCode: '',
+      checkboxAcceptTerms: false,
     },
   }),
 
@@ -172,6 +184,16 @@ export default {
       }
       return errors;
     },
+    checkboxAcceptTermsErrors() {
+      const errors = [];
+      if (!this.$v.form.checkboxAcceptTerms.$dirty) {
+        return errors;
+      }
+      if (!this.$v.form.checkboxAcceptTerms.checked) {
+        errors.push('You must agree the Terms and Conditions!');
+      }
+      return errors;
+    },
   },
 
   methods: {
@@ -205,6 +227,7 @@ export default {
       this.form.password = null;
       this.form.repeatPassword = null;
       this.form.promotionalCode = null;
+      this.form.checkboxAcceptTerms = false;
     },
   },
 };

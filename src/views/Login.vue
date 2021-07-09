@@ -2,7 +2,7 @@
   <div>
     <v-custom-card-component
         :image-src="'https://cdn.vuetifyjs.com/images/cards/cooking.png'"
-        :title="'Login panel'"
+        :title="'Account panel'"
     >
       <template v-slot:content>
         <form>
@@ -29,7 +29,7 @@
               class="mr-4"
               @click="submitLoginForm"
           >
-            submit
+            Access Account
           </v-btn>
         </form>
         <br/><br/>
