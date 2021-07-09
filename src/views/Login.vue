@@ -39,8 +39,8 @@
 </template>
 
 <script>
-import {validationMixin} from 'vuelidate';
-import {email, minLength, required} from 'vuelidate/lib/validators';
+import { validationMixin } from 'vuelidate';
+import { email, minLength, required } from 'vuelidate/lib/validators';
 import VCustomCardComponent from '../components/VCustomCardComponent.vue';
 
 export default {
