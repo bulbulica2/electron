@@ -83,9 +83,7 @@ export default {
       repeatPassword: {
         required,
         minLength: minLength(6),
-        sameAsPassword: sameAs(function () {
-          return this.form.password;
-        }),
+        sameAsPassword: sameAs('password'),
       },
       promotionalCode: { alphaNum, minLength: minLength(10), maxLength: maxLength(10) },
     },
