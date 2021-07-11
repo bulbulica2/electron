@@ -1,24 +1,48 @@
 <template>
   <div id="nav">
     <v-card>
-      <v-tabs>
-        <p style="text-align: left">logo</p>
-        <router-link to="/account">Account</router-link>
-      </v-tabs>
+      <v-card no-gutters>
+        <v-row>
+          <v-col cols="12" sm="2" class="pa-md-5">
+            <v-card>
+              <table aria-describedby="logo">
+                <tr>
+                  <th id="logo_image">
+                    <img alt="Xentrom logo" src="../../assets/small_logo.png">
+                  </th>
+                  <th id="logo_text">
+                    <p>ENTROM</p>
+                  </th>
+                </tr>
+              </table>
+            </v-card>
+          </v-col>
+          <v-col cols="12" sm="8"></v-col>
+          <v-col cols="12" sm="2" class="pa-md-5">
+            <router-link to="/account">
+              <v-card>
+                <v-btn
+                    rounded
+                    color="primary"
+                    dark
+                >
+                  Account
+                </v-btn>
+              </v-card>
+            </router-link>
+          </v-col>
+        </v-row>
+      </v-card>
       <v-tabs
           background-color="deep-purple accent-4"
           center-active
           centered
       >
-        <v-tab @v-on:click="this.$router.go('/')">
-          <router-link to="/">
-            Company
-          </router-link>
+        <v-tab @click="redirectToPage('')">
+          Company
         </v-tab>
-        <v-tab @v-on:click="location.href='/about'">
-          <router-link to="/about">
-            Project
-          </router-link>
+        <v-tab @click="redirectToPage('about')">
+          Project
         </v-tab>
         <v-tab>Roadmap</v-tab>
         <v-tab>Portofolio</v-tab>
@@ -30,8 +54,11 @@
 </template>
 
 <script>
+import redirect from '../../utils/redirect.vue';
+
 export default {
   name: 'Header',
+  mixins: [redirect],
 };
 </script>
 
