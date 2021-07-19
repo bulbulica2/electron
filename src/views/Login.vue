@@ -1,33 +1,33 @@
 <template>
   <div>
     <v-custom-card-component
-        :image-src="'https://cdn.vuetifyjs.com/images/cards/cooking.png'"
-        :title="'Account panel'"
+      :image-src="'https://cdn.vuetifyjs.com/images/cards/cooking.png'"
+      :title="'Login panel'"
     >
       <template v-slot:content>
         <form>
           <v-text-field
-              v-model="form.email"
-              :error-messages="emailErrors"
-              type="email"
-              label="E-mail"
-              required
-              @input="$v.form.email.$touch()"
-              @blur="$v.form.email.$touch()"
+            v-model="form.email"
+            :error-messages="emailErrors"
+            type="email"
+            label="E-mail"
+            required
+            @input="$v.form.email.$touch()"
+            @blur="$v.form.email.$touch()"
           ></v-text-field>
           <v-text-field
-              v-model="form.password"
-              :error-messages="passwordErrors"
-              type="password"
-              label="Password"
-              required
-              @input="$v.form.password.$touch()"
-              @blur="$v.form.password.$touch()"
+            v-model="form.password"
+            :error-messages="passwordErrors"
+            type="password"
+            label="Password"
+            required
+            @input="$v.form.password.$touch()"
+            @blur="$v.form.password.$touch()"
           ></v-text-field>
 
           <v-btn
-              class="mr-4"
-              @click="submitLoginForm"
+            class="mr-4"
+            @click="submitLoginForm"
           >
             Access Account
           </v-btn>

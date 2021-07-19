@@ -1,69 +1,69 @@
 <template>
   <div>
     <v-custom-card-component
-        :image-src="'https://cdn.vuetifyjs.com/images/cards/cooking.png'"
-        :title="'Register page'"
+      :image-src="'https://cdn.vuetifyjs.com/images/cards/cooking.png'"
+      :title="'Register page'"
     >
       <template v-slot:content>
         <form>
           <v-text-field
-              v-model="form.username"
-              :error-messages="usernameErrors"
-              :counter="50"
-              type="text"
-              label="Username"
-              required
-              @input="$v.form.username.$touch()"
-              @blur="$v.form.username.$touch()"
+            v-model="form.username"
+            :error-messages="usernameErrors"
+            :counter="50"
+            type="text"
+            label="Username"
+            required
+            @input="$v.form.username.$touch()"
+            @blur="$v.form.username.$touch()"
           ></v-text-field>
           <v-text-field
-              v-model="form.email"
-              :error-messages="emailErrors"
-              :counter="50"
-              type="email"
-              label="E-mail"
-              required
-              @input="$v.form.email.$touch()"
-              @blur="$v.form.email.$touch()"
+            v-model="form.email"
+            :error-messages="emailErrors"
+            :counter="50"
+            type="email"
+            label="E-mail"
+            required
+            @input="$v.form.email.$touch()"
+            @blur="$v.form.email.$touch()"
           ></v-text-field>
           <v-text-field
-              v-model="form.password"
-              :error-messages="passwordErrors"
-              type="password"
-              label="Password"
-              required
-              @input="$v.form.password.$touch()"
-              @blur="$v.form.password.$touch()"
+            v-model="form.password"
+            :error-messages="passwordErrors"
+            type="password"
+            label="Password"
+            required
+            @input="$v.form.password.$touch()"
+            @blur="$v.form.password.$touch()"
           ></v-text-field>
           <v-text-field
-              v-model="form.repeatPassword"
-              :error-messages="repeatPasswordErrors"
-              type="password"
-              label="Confirm Password"
-              required
-              @input="$v.form.repeatPassword.$touch()"
-              @blur="$v.form.repeatPassword.$touch()"
+            v-model="form.repeatPassword"
+            :error-messages="repeatPasswordErrors"
+            type="password"
+            label="Confirm Password"
+            required
+            @input="$v.form.repeatPassword.$touch()"
+            @blur="$v.form.repeatPassword.$touch()"
           ></v-text-field>
           <v-text-field
-              v-model="form.promotionalCode"
-              :error-messages="promotionalCodeErrors"
-              type="text"
-              label="Promotional Code"
-              @input="$v.form.promotionalCode.$touch()"
-              @blur="$v.form.promotionalCode.$touch()"
+            v-model="form.promotionalCode"
+            :error-messages="promotionalCodeErrors"
+            type="text"
+            label="Promotional Code"
+            @input="$v.form.promotionalCode.$touch()"
+            @blur="$v.form.promotionalCode.$touch()"
           ></v-text-field>
           <v-checkbox
-              v-model="form.checkboxAcceptTerms"
-              :error-messages="checkboxAcceptTermsErrors"
-              label="I accept the Terms of user of Xentrom"
-              required
-              @change="$v.form.checkboxAcceptTerms.$touch()"
-              @blur="$v.form.checkboxAcceptTerms.$touch()"
+            v-model="form.checkboxAcceptTerms"
+            :error-messages="checkboxAcceptTermsErrors"
+            label="I accept the Terms of user of Xentrom"
+            required
+            @change="$v.form.checkboxAcceptTerms.$touch()"
+            @blur="$v.form.checkboxAcceptTerms.$touch()"
           ></v-checkbox>
 
           <v-btn
-              class="mr-4"
-              @click="submitRegisterForm"
+            class="mr-4"
+            @click="submitRegisterForm"
           >
             Create Account
           </v-btn>

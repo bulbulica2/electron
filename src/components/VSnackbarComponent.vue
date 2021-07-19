@@ -1,16 +1,16 @@
 <template>
   <v-snackbar
-      :timeout="2000"
-      :centered="true"
-      v-model="displaySnackbar"
+    :timeout="2000"
+    :centered="true"
+    v-model="displaySnackbar"
   >
     {{snackbarMessage}}
     <template v-slot:action="{ attrs }">
       <v-btn
-          text
-          color="white"
-          v-bind="attrs"
-          @click="displaySnackbar = false"
+        text
+        color="white"
+        v-bind="attrs"
+        @click="displaySnackbar = false"
       >
         Close
       </v-btn>

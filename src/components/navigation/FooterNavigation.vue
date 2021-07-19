@@ -1,17 +1,17 @@
 <template>
   <v-footer
-      class="footer-navigator"
-      padless
+    class="footer-navigator"
+    padless
   >
     <v-card
-        width="100%"
+      width="100%"
     >
       <v-container>
         <v-btn
-            v-for="icon in icons"
-            :key="icon"
-            class="mx-4 white--text"
-            icon
+          v-for="icon in icons"
+          :key="icon"
+          class="mx-4 white--text"
+          icon
         >
           <v-icon size="24px">
             {{ icon }}
@@ -21,11 +21,11 @@
           <v-col sm="3">
             <v-list dense>
               <v-list-item-group
-                  color="primary"
+                color="primary"
               >
                 <v-list-item
-                    v-for="(item, i) in items"
-                    :key="i"
+                  v-for="(item, i) in items"
+                  :key="i"
                 >
                   <v-list-item-content>
                     <v-list-item-title v-text="item.text"></v-list-item-title>
@@ -49,8 +49,8 @@
           </v-col>
           <v-col sm="3">
             <v-card
-                class="mx-auto"
-                style="border: 0"
+              class="mx-auto"
+              style="border: 0"
             >
               <v-list-item>
                 <v-list-item-content>
