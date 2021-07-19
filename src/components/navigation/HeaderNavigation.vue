@@ -18,13 +18,13 @@
             </v-card>
           </v-col>
           <v-col cols="12" sm="8"></v-col>
-          <v-col cols="12" sm="2" class="pa-md-5">
+          <v-col cols="12" sm="2" class="pa-md-7">
             <router-link to="/account">
               <v-card>
                 <v-btn
-                    rounded
-                    color="primary"
-                    dark
+                  rounded
+                  color="primary"
+                  dark
                 >
                   Account
                 </v-btn>
@@ -34,20 +34,20 @@
         </v-row>
       </v-card>
       <v-tabs
-          background-color="deep-purple accent-4"
-          center-active
-          centered
+        background-color="deep-purple accent-4"
+        center-active
+        centered
       >
-        <v-tab @click="redirectToPage('')">
-          Company
+        <v-tab
+          v-for="tab in TABS"
+          @click="redirectToPage(tab.location)"
+          :id="`${tab.id}_${tab.title}`"
+          :key="tab.id"
+        >
+<!--          :class="checkCurrentPage(tab.title) ? ''
+: removeActiveTab(`${tab.id}_${tab.title}`)"-->
+          {{tab.title}}
         </v-tab>
-        <v-tab @click="redirectToPage('about')">
-          Project
-        </v-tab>
-        <v-tab>Roadmap</v-tab>
-        <v-tab>Portofolio</v-tab>
-        <v-tab>Community</v-tab>
-        <v-tab>FAQ</v-tab>
       </v-tabs>
     </v-card>
   </div>
@@ -55,10 +55,39 @@
 
 <script>
 import redirect from '../../utils/redirect.vue';
+import constants from '../../utils/constants';
 
 export default {
   name: 'Header',
   mixins: [redirect],
+  data() {
+    return {
+      TABS: null,
+      // activeTab: this.$store.getters.getCurrentPage.pageName
+      //   ? this.$store.getters.getCurrentPage.pageName : 'company',
+    };
+  },
+  created() {
+    this.TABS = constants.PAGES;
+  },
+  computed: {
+    // getCurrentPage() {
+    //   // debugger
+    //   return this.$store.getters.getCurrentPage;
+    // },
+  },
+  methods: {
+    // checkCurrentPage(pageName) {
+    //   return this.$store.getters.getCurrentPage.pageName === pageName;
+    // },
+    // removeActiveTab(currentTab) {
+    //   // currentTab.style.removeProperty('v-tab--active');
+    //   const selectedElement = document.getElementById(currentTab);
+    //   if (selectedElement) {
+    //     selectedElement.style.removeProperty('v-tab--active');
+    //   }
+    // },
+  },
 };
 </script>
 
@@ -76,4 +105,13 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+/*.v-tabs .v-tab--active {*/
+/*  color: #fff;*/
+/*}*/
+
+/*.v-tab:before, .v-tabs-slider {*/
+/*  !*text-decoration: none;*!*/
+/*  !*background-color: red;*!*/
+/*}*/
 </style>
