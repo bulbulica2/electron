@@ -3,7 +3,7 @@
     <header-navigation/>
     <router-view/>
     <v-snackbar-component/>
-    <footer-navigation/>
+<!--    <footer-navigation/>-->
   </v-app>
 </template>
 

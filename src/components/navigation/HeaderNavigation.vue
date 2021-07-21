@@ -46,7 +46,33 @@
         >
 <!--          :class="checkCurrentPage(tab.title) ? ''
 : removeActiveTab(`${tab.id}_${tab.title}`)"-->
-          {{tab.title}}
+          <v-menu
+            :open-on-hover="true"
+            offset-y
+          >
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                rounded
+                dark
+                v-bind="attrs"
+                v-on="on"
+              >
+                {{tab.title}}
+              </v-btn>
+            </template>
+            <v-list v-if="tab.subPages">
+              <v-list-item
+                v-for="subItem in tab.subPages"
+                :key="subItem.id"
+              >
+                <v-list-item-title
+                  @click="redirectToPage(subItem.location)"
+                >
+                  {{ subItem.title }}
+                </v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
         </v-tab>
       </v-tabs>
     </v-card>

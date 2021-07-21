@@ -3,6 +3,23 @@ const PAGES = {
     id: 1,
     title: 'Company',
     location: '',
+	  subPages: [
+		  {
+		  	id: 1,
+			  title: 'About us',
+			  location: 'about',
+		  },
+		  {
+		  	id: 2,
+			  title: 'News',
+			  location: 'news',
+		  },
+		  {
+		  	id: 3,
+			  title: 'Events',
+			  location: 'events',
+		  }
+	  ],
   },
   project: {
     id: 2,
@@ -20,12 +37,12 @@ const PAGES = {
     location: 'portofolio',
   },
   community: {
-    id: 4,
+    id: 5,
     title: 'Community',
     location: 'community',
   },
   faq: {
-    id: 5,
+    id: 6,
     title: 'Faq',
     location: 'faq',
   },
